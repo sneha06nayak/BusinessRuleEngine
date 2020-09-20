@@ -19,6 +19,7 @@ namespace BusinessRulesEngine.Tests
         private readonly Func<RuleType, IRuleEvaluator<OrderInfo, RuleResult>> _ruleFactory;
         private readonly ILogger<BookRulesHandler> _bookRuleslogger;
         private readonly ILogger<ProductRuleHandler> _productRuleslogger;
+        private readonly ILogger<RuleOrchestrator> _logger;
         private readonly ISlipGenerator<OrderInfo, PackagingSlip> _slipGenerator;
         private readonly RuleOrchestrator _ruleOrchestrator;
         public RuleOschestratorTests()
@@ -26,8 +27,9 @@ namespace BusinessRulesEngine.Tests
             _ruleFactory = A.Fake<Func<RuleType, IRuleEvaluator<OrderInfo, RuleResult>>>();
             _bookRuleslogger = A.Fake<ILogger<BookRulesHandler>>();
             _productRuleslogger = A.Fake<ILogger<ProductRuleHandler>>();
+            _logger = A.Fake<ILogger<RuleOrchestrator>>();
             _slipGenerator = A.Fake<ISlipGenerator<OrderInfo, PackagingSlip>>();
-            _ruleOrchestrator = new RuleOrchestrator(_ruleFactory);
+            _ruleOrchestrator = new RuleOrchestrator(_ruleFactory, _logger);
         }
 
         [Fact]

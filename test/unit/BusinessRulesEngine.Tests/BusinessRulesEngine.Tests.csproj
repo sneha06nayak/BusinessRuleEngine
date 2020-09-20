@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\development\RuleEngine.API\RulesEngine.API.csproj" />
-    <ProjectReference Include="..\..\..\RulesEngine.Common\RulesEngine.Common.csproj" />
+    <ProjectReference Include="..\..\..\development\RulesEngine.Common\RulesEngine.Common.csproj" />
   </ItemGroup>
 
 </Project>

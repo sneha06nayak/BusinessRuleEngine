@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\RulesEngine.Common\RulesEngine.Common.csproj" />
+    <ProjectReference Include="..\RulesEngine.Common\RulesEngine.Common.csproj" />
   </ItemGroup>
 
 </Project>

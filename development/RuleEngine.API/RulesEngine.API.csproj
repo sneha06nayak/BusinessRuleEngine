@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\RulesEngine.Common\RulesEngine.Common.csproj" />
     <ProjectReference Include="..\RuleEngine.Service\RulesEngine.Service.csproj" />
+    <ProjectReference Include="..\RulesEngine.Common\RulesEngine.Common.csproj" />
   </ItemGroup>
 
 

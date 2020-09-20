@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{10D7235A-5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RulesEngine.Service", "development\RuleEngine.Service\RulesEngine.Service.csproj", "{28BEB9E3-9FE8-4668-9695-7444F6871853}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Common", "RulesEngine.Common\RulesEngine.Common.csproj", "{E5047006-092F-4D7B-A825-7F8212C09B8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Common", "development\RulesEngine.Common\RulesEngine.Common.csproj", "{E5047006-092F-4D7B-A825-7F8212C09B8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessRulesEngine.Tests", "test\unit\BusinessRulesEngine.Tests\BusinessRulesEngine.Tests.csproj", "{FECBA2F5-3BA7-4B8D-A9A9-2D391BBC4F32}"
 EndProject
