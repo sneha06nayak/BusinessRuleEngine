@@ -60,8 +60,44 @@ namespace BusinessRulesEngine.Tests
             //Assert
             Assert.Equal(3, result.SelectMany(x => x.PackagingSlip).ToList().Count);
         }
+
         [Fact]
-        public async Task ExecuteAsync_BookAndProduct_ReturnsThreePackageSlip()
+        public async Task ExecuteAsync_2Books_ReturnsThreePackageSlip()
+        {
+            //Arrange
+            A.CallTo(() => _ruleFactory(RuleType.Book)).Returns<IRuleEvaluator<OrderInfo, RuleResult>>(new BookRulesHandler(_bookRuleslogger, _slipGenerator));
+
+            //Act
+            var result = await _ruleOrchestrator.ExecuteAsync(new RuleRequest
+            {
+                OrderInfo = new OrderInfo
+                {
+                    Address = "Bangalore",
+                    FirstName = "John",
+                    LastName = "Carter",
+                    Email = "john.carter@gmail.com",
+                    ProductInfo = new List<Product> { new Product
+                 {
+                     Id = 1,
+                     Name = "Sidney Sheldon",
+                     ProductType=RuleType.Book,
+                     Price = 79
+                 },
+                 new Product{
+                     Id = 2,
+                     Name = "A Journey called life",
+                     ProductType=RuleType.Book,
+                     Price = 50
+                 }}
+                }
+            });
+
+            //Assert
+            Assert.Equal(3, result.SelectMany(x => x.PackagingSlip).ToList().Count);
+        }
+
+        [Fact]
+        public async Task ExecuteAsync_BookAndProduct_Returns5PackageSlip()
         {
             //Arrange
             A.CallTo(() => _ruleFactory(RuleType.Book)).Returns<IRuleEvaluator<OrderInfo, RuleResult>>(new BookRulesHandler(_bookRuleslogger, _slipGenerator));

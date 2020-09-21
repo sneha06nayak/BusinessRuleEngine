@@ -30,9 +30,9 @@ namespace RulesEngine.Service
                 {
                     return result;
                 }
-                foreach (var ruleType in ruleRequest.OrderInfo.ProductInfo)
+                foreach (var ruleType in ruleRequest.OrderInfo.ProductInfo.Select(x => x.ProductType).ToList().Distinct())
                 {
-                    var ruleHandler = _ruleFactory(ruleType.ProductType);
+                    var ruleHandler = _ruleFactory(ruleType);
                     result.Add(await ruleHandler.ExecuteAsync(ruleRequest.OrderInfo));
                 }
             }
